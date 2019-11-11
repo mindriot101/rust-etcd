@@ -3,7 +3,7 @@
 //!
 use std::error::Error;
 
-static HOST_STR: &str = "http://127.0.0.1:2379";
+static HOST_STR: &str = "http://etcd3:2379";
 
 use etcd::v3::etcdserver;
 
