@@ -68,23 +68,36 @@
 //!
 //! Crate `etcd` has one Cargo feature, `tls`, which adds HTTPS support via the `Client::https`
 //! constructor. This feature is enabled by default.
-#![deny(missing_debug_implementations, missing_docs, warnings)]
+// #![deny(missing_debug_implementations, missing_docs, warnings)]
 
+#[cfg(not(feature = "v3"))]
 pub use crate::client::{BasicAuth, Client, ClusterInfo, Health, Response};
+#[cfg(not(feature = "v3"))]
 pub use crate::error::{ApiError, Error};
+#[cfg(not(feature = "v3"))]
 pub use crate::version::VersionInfo;
 
+#[cfg(not(feature = "v3"))]
 pub mod auth;
+#[cfg(not(feature = "v3"))]
 pub mod kv;
+#[cfg(not(feature = "v3"))]
 pub mod members;
+#[cfg(not(feature = "v3"))]
 pub mod stats;
 
 #[cfg(feature = "v3")]
 pub mod v3;
 
+#[cfg(not(feature = "v3"))]
 mod client;
+#[cfg(not(feature = "v3"))]
 mod error;
+#[cfg(not(feature = "v3"))]
 mod first_ok;
+#[cfg(not(feature = "v3"))]
 mod http;
+#[cfg(not(feature = "v3"))]
 mod options;
+#[cfg(not(feature = "v3"))]
 mod version;

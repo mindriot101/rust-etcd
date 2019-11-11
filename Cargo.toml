@@ -24,7 +24,7 @@ serde_json = "1.0.32"
 url = "1.7.1"
 base64 = "0.10.0"
 log = "0.4.6"
-tokio = "0.1.13"
+tokio = "0.2.0-alpha.6"
 
 [dependencies.hyper-tls]
 optional = true
@@ -34,19 +34,33 @@ version = "0.3.1"
 optional = true
 version = "0.2.2"
 
-[dependencies.grpc]
-optional = true
-version = "0.6.1"
+# v3 features
 
-[dependencies.protobuf]
+[dependencies.tonic]
 optional = true
-version = "~2"
+version = "0.1.0-alpha.6"
 
-[build-dependencies.protoc-rust-grpc]
+[build-dependencies.tonic-build]
 optional = true
-version = "0.6.1"
+version = "0.1.0-alpha.6"
+
+[dependencies.bytes]
+optional = true
+version = "0.4.12"
+
+[dependencies.prost]
+optional = true
+version = "0.5.0"
+
+[dependencies.prost-derive]
+optional = true
+version = "0.5.0"
+
+[dependencies.async-stream]
+optional = true
+version = "0.1.2"
 
 [features]
 default = ["tls"]
 tls = ["hyper-tls", "native-tls"]
-v3 = ["grpc", "protobuf", "protoc-rust-grpc"]
+v3 = ["tonic", "tonic-build", "bytes", "prost", "prost-derive", "async-stream"]
