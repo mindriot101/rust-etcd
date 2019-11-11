@@ -3,7 +3,7 @@ all: rust clean
 
 .PHONY: rust
 rust: ssl
-	-docker-compose run --rm rust
+	-docker-compose run --user $(shell id -u):$(shell id -g) --rm rust
 
 .PHONY: clean
 clean: clean-ssl
