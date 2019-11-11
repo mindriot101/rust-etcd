@@ -1,3 +1,4 @@
+#![cfg(not(feature = "v3"))]
 use etcd::members;
 use futures::future::Future;
 

@@ -1,3 +1,4 @@
+#![cfg(not(feature = "v3"))]
 use futures::{Future, Stream};
 
 use crate::test::TestClient;
@@ -18,6 +19,7 @@ fn health() {
 
     client.run(work);
 }
+
 #[test]
 fn versions() {
     let mut client = TestClient::no_destructor();

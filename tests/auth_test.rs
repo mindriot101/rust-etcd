@@ -1,3 +1,4 @@
+#![cfg(not(feature = "v3"))]
 use etcd::auth::{self, AuthChange, NewUser, Role, RoleUpdate, UserUpdate};
 use etcd::{BasicAuth, Client};
 use futures::future::Future;

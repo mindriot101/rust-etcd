@@ -1,3 +1,4 @@
+#![cfg(not(feature = "v3"))]
 use std::fs::File;
 use std::io::Read;
 use std::ops::Deref;

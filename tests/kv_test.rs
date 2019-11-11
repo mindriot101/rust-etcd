@@ -1,3 +1,4 @@
+#![cfg(not(feature = "v3"))]
 use std::thread::{sleep, spawn};
 use std::time::Duration;
 

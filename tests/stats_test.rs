@@ -1,3 +1,4 @@
+#![cfg(not(feature = "v3"))]
 use etcd::stats;
 use futures::{Future, Stream};
 
