@@ -8,6 +8,9 @@ services:
     command: -advertise-client-urls=https://0.0.0.0:2379 -listen-client-urls=https://0.0.0.0:2379 -trusted-ca-file=/ssl/ca.pem -cert-file=/ssl/server.pem -key-file=/ssl/server-key.pem -client-cert-auth
     volumes:
       - ./tests/ssl:/ssl
+  etcd3:
+    image: quay.io/coreos/etcd:v3.4.3
+    command: -advertise-client-urls=http://0.0.0.0:2379 -listen-client-urls=http://0.0.0.0:2379
   rust:
     build: .
     environment:
